@@ -4,7 +4,7 @@ import org.springframework.http.HttpStatus;
 
 public class CustomResponse {
     
-    private HttpStatus hhtpCode;
+    private HttpStatus httpCode;
     private Object data;
     private Object massege;
     private int code;
@@ -15,7 +15,7 @@ public class CustomResponse {
     }
 
     public CustomResponse(HttpStatus hhtpCode, Object data, Object massege, int code) {
-        this.hhtpCode = hhtpCode;
+        this.httpCode = hhtpCode;
         this.data = data;
         this.massege = massege;
         this.code = code;
@@ -24,7 +24,7 @@ public class CustomResponse {
     
 
     public HttpStatus getHhtpCode() {
-        return hhtpCode;
+        return httpCode;
     }
 
     public Object getData() {
@@ -39,8 +39,8 @@ public class CustomResponse {
         return code;
     }
 
-    public void setHhtpCode(HttpStatus hhtpCode) {
-        this.hhtpCode = hhtpCode;
+    public void setHttpCode(HttpStatus hhtpCode) {
+        this.httpCode = hhtpCode;
     }
 
     public void setData(Object data) {
