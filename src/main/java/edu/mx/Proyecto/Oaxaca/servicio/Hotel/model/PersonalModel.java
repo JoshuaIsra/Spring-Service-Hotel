@@ -1,17 +1,13 @@
 
 package edu.mx.Proyecto.Oaxaca.servicio.Hotel.model;
 
-import java.util.UUID;
+import java.util.Objects;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 @Entity
 @Table(name ="Personal")
-
 public class PersonalModel extends PersonaModel{
-    @Column(unique=true, nullable=false)
-    private String id_personal = UUID.randomUUID().toString();
     private String rol; 
     private String turno;
 
@@ -19,23 +15,22 @@ public class PersonalModel extends PersonaModel{
     }
     
 
-    public PersonalModel(String id_personal, String rol, String turno) {
-        this.id_personal = id_personal;
+    public PersonalModel(String rol, String turno) {
         this.rol = rol;
         this.turno = turno;
     }
 
 
-    public String getId_personal() {
-        return this.id_personal;
+    public PersonalModel(int id, String nombre, String apellido, String telefono, String email, String direccion,
+            String rol, String turno) {
+        super(id, nombre, apellido, telefono, email, direccion);
+        this.rol = rol;
+        this.turno = turno;
     }
 
-    public void setId_personal(String id_personal) {
-        this.id_personal = id_personal;
-    }
 
     public String getRol() {
-        return this.rol;
+        return rol;
     }
 
     public void setRol(String rol) {
@@ -43,12 +38,41 @@ public class PersonalModel extends PersonaModel{
     }
 
     public String getTurno() {
-        return this.turno;
+        return turno;
     }
 
     public void setTurno(String turno) {
         this.turno = turno;
     }
 
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 71 * hash + Objects.hashCode(this.rol);
+        hash = 71 * hash + Objects.hashCode(this.turno);
+        return hash;
+    }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final PersonalModel other = (PersonalModel) obj;
+        if (!Objects.equals(this.rol, other.rol)) {
+            return false;
+        }
+        return Objects.equals(this.turno, other.turno);
+    }
+    
+    
+
+
+    
 }

@@ -11,7 +11,7 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "Persona")
 @Inheritance(strategy= InheritanceType.JOINED)
-public class PersonaModel {
+public class PersonaModel { 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int id;
