@@ -23,7 +23,7 @@ public class PersonalModel extends PersonaModel{
 
     public PersonalModel(int id, String nombre, String apellido, String telefono, String email, String direccion,
             String rol, String turno) {
-        super(id, nombre, apellido, telefono, email, direccion);
+        super( nombre, apellido, telefono, email, direccion);
         this.rol = rol;
         this.turno = turno;
     }

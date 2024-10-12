@@ -1,4 +1,4 @@
-package edu.mx.Proyecto.Oaxaca.servicio.Hotel.implement;
+package edu.mx.Proyecto.Oaxaca.servicio.Hotel.implement.service;
 
 import java.util.List;
 
@@ -12,8 +12,7 @@ import edu.mx.Proyecto.Oaxaca.servicio.Hotel.service.IndividualService;
 @Service
 public class IndividualServiceImplements implements  IndividualService{
     @Autowired
-    public  IndividualRepository individualRepository;
-
+    private IndividualRepository individualRepository;
     @Override
     public void registrarIndividual(IndividualModel individualModel) {
         individualRepository.save(individualModel);
@@ -21,7 +20,7 @@ public class IndividualServiceImplements implements  IndividualService{
 
     @Override
     public List obtenerIndividual() {
-        return individualRepository.findAll();
+        return individualRepository.findAll();        
     }
 
     @Override
@@ -31,18 +30,19 @@ public class IndividualServiceImplements implements  IndividualService{
 
     @Override
     public void actualizarDatosIndividual(IndividualModel individualModel, int id) {
-        individualModel.setId(id);
+        individualModel.setId(id);        
         individualRepository.save(individualModel);
     }
 
     @Override
     public void borrarIndividual(int id) {
-        individualRepository.deleteById(id);
+        individualRepository.deleteById(id);        
     }
 
     @Override
     public void borrarTodasLasIndividuals() {
-        individualRepository.deleteAll();
+        individualRepository.deleteAll();        
     }
+   
     
 }
