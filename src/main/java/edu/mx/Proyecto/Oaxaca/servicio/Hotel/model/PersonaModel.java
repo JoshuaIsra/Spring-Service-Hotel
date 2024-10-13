@@ -24,7 +24,8 @@ public class PersonaModel {
     public PersonaModel() {
     }
 
-    public PersonaModel( String nombre, String apellido, String telefono, String email, String direccion) {
+    public PersonaModel( int id ,String nombre, String apellido, String telefono, String email, String direccion) {
+        this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
         this.telefono = telefono;
